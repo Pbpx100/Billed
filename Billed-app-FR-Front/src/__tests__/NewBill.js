@@ -26,12 +26,6 @@ describe("Given I am connected as an employee", () => {
       const mailIcon = screen.getByTestId("icon-mail");
       expect(mailIcon).toBeTruthy();
     });
-
-    // test("Then ...", () => {
-    //   const html = NewBillUI();
-    //   document.body.innerHTML = html;
-    //   //to-do write assertion
-    // });
   });
 
   // test d'intégration POST
@@ -89,12 +83,16 @@ describe("Given I am connected as an employee", () => {
       expect(fileField.files[0].type).toBe("image/png");
       expect(handleChangeFile).toHaveBeenCalled();
 
+      //handle error
       const handleSubmit = jest.fn(newBill.handleSubmit);
       newBillForm.addEventListener("submit", handleSubmit);
+
       fireEvent.submit(newBillForm);
-      expect(handleSubmit).toHaveBeenCalled();
+      await waitFor(() => {
+        expect(handleSubmit).toHaveBeenCalled();
+        const errorMessages = document.querySelectorAll(".error-message");
+        expect(errorMessages.length).toBe(0);
+      });
     });
   });
 });
-})
-
