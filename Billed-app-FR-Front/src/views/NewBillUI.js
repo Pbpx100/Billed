@@ -28,36 +28,49 @@ export default () => {
                   <div class="col-half">
                     <label for="expense-name" class="bold-label">Nom de la dépense</label>
                     <input type="text" class="form-control blue-border" data-testid="expense-name" placeholder="Vol Paris Londres" />
+                    <span class="error-message" type="hidden"></span>
                   </div>
                   <div class="col-half">
                     <label for="datepicker" class="bold-label">Date</label>
                     <input required type="date" class="form-control blue-border" data-testid="datepicker" />
+                    <span class="error-message" type="hidden"></span>
+
                   </div>
                   <div class="col-half">
                     <label for="amount" class="bold-label">Montant TTC </label>
                     <input required type="number" class="form-control blue-border input-icon input-icon-right" data-testid="amount" placeholder="348"/>
-                  </div>
+                    <span class="error-message" type="hidden"></span>
+                  
+                    </div>
                   <div class="col-half-row">
                     <div class="flex-col"> 
                       <label for="vat" class="bold-label">TVA</label>
                       <input type="number" class="form-control blue-border" data-testid="vat" placeholder="70" />
-                    </div>
+                      <span class="error-message" type="hidden"></span>
+                    
+                      </div>
                     <div class="flex-col">
                       <label for="pct" class="white-text">%</label>
                       <input required type="number" class="form-control blue-border" data-testid="pct" placeholder="20" />
-                    </div>
+                      <span class="error-message" type="hidden"></span>
+                    
+                      </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="col-half">
                     <label for="commentary" class="bold-label">Commentaire</label>
                     <textarea class="form-control blue-border" data-testid="commentary" rows="3"></textarea>
-                  </div>
+                    <span class="error-message" type="hidden"></span>
+                 
+                    </div>
                   <div class="col-half">
                     <label for="file" class="bold-label">Justificatif</label>
                     <input required type="file" class="form-control blue-border" data-testid="file" />
                     <p class="error-extensionFile" data-testid="fileFormat-errorMessage">Votre justificatif doit être une image de format (.jpg) ou (.jpeg) ou (.png)</p>
-                  </div>
+                    <span class="error-message" type="hidden"></span>
+                 
+                    </div>
                 </div>
             </div>
             <div class="row">
